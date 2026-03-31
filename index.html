@@ -37,7 +37,6 @@
         );
     }
 
-    /* ── HEADER ── */
     header {
       max-width: 860px;
       margin: 0 auto 3rem auto;
@@ -80,7 +79,6 @@
       animation: fadeIn 0.5s 0.4s forwards;
     }
 
-    /* ── INTRO ── */
     .intro {
       max-width: 860px;
       margin: 0 auto 2.5rem auto;
@@ -91,7 +89,6 @@
       animation: fadeIn 0.5s 0.5s forwards;
     }
 
-    /* ── SECTION LABEL ── */
     .section-label {
       max-width: 860px;
       margin: 0 auto 1rem auto;
@@ -104,7 +101,6 @@
       animation: fadeIn 0.5s 0.6s forwards;
     }
 
-    /* ── NEWSLETTER LIST ── */
     .newsletter-list {
       max-width: 860px;
       margin: 0 auto;
@@ -117,7 +113,6 @@
       transform: translateY(10px);
     }
 
-    /* stagger each item */
     .newsletter-list li:nth-child(1)  { animation: riseIn 0.4s 0.65s forwards; }
     .newsletter-list li:nth-child(2)  { animation: riseIn 0.4s 0.75s forwards; }
     .newsletter-list li:nth-child(3)  { animation: riseIn 0.4s 0.85s forwards; }
@@ -185,7 +180,6 @@
       transition: color 0.15s;
     }
 
-    /* ── FOOTER ── */
     footer {
       max-width: 860px;
       margin: 3rem auto 0 auto;
@@ -198,7 +192,6 @@
       text-transform: uppercase;
     }
 
-    /* ── ANIMATIONS ── */
     @keyframes fadeIn {
       to { opacity: 1; }
     }
@@ -210,7 +203,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
       .issue-date { display: none; }
     }
@@ -231,22 +223,12 @@
 
   <p class="section-label">// Editions</p>
 
-  <!-- 
-    ============================================================
-    HOW TO ADD A NEW NEWSLETTER:
-    Copy one <li> block below and update:
-      - href="..."        → filename of your HTML newsletter
-      - issue number      → next number in sequence
-      - headline text     → your newsletter headline
-      - date              → date of publication
-    ============================================================
-  -->
   <ul class="newsletter-list">
 
     <li>
       <a href="newsletters/issue-001">
         <span class="issue-number">#01</span>
-        <span class="issue-headline">The Payrise! Does it BENEFIT anyone?</span>
+        <span class="issue-headline">Inflation Math Dressed Up As Generosity</span>
         <span class="issue-date">Mar 2025</span>
       </a>
     </li>
@@ -254,7 +236,7 @@
     <li>
       <a href="newsletters/issue-002">
         <span class="issue-number">#02</span>
-        <span class="issue-headline">Your Second Headline Goes Here</span>
+        <span class="issue-headline">Prudent Planning, Or A Warning Shot?</span>
         <span class="issue-date">Apr 2025</span>
       </a>
     </li>
@@ -270,7 +252,7 @@
     <li>
       <a href="newsletters/issue-004">
         <span class="issue-number">#04</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Fourth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -278,7 +260,7 @@
     <li>
       <a href="newsletters/issue-005">
         <span class="issue-number">#05</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Fifth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -286,7 +268,7 @@
     <li>
       <a href="newsletters/issue-006">
         <span class="issue-number">#06</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Sixth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -294,7 +276,7 @@
     <li>
       <a href="newsletters/issue-007">
         <span class="issue-number">#07</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Seventh Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -302,7 +284,7 @@
     <li>
       <a href="newsletters/issue-008">
         <span class="issue-number">#08</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Eighth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -310,7 +292,7 @@
     <li>
       <a href="newsletters/issue-009">
         <span class="issue-number">#09</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Ninth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
@@ -318,14 +300,10 @@
     <li>
       <a href="newsletters/issue-010">
         <span class="issue-number">#10</span>
-        <span class="issue-headline">Your Third Headline Goes Here</span>
+        <span class="issue-headline">Your Tenth Headline Goes Here</span>
         <span class="issue-date">May 2025</span>
       </a>
     </li>
-
-    
-
-    <!-- Add more <li> blocks above this line -->
 
   </ul>
 

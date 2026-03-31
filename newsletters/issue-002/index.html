@@ -1,1 +1,332 @@
-<html><body><h1>issue-002</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bullshit Detector Report | Underground Newsletter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&family=Bungee&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zinc-950': '#09090b',
+                        'industrial-orange': '#ff4d00',
+                        'news-gray': '#d1d1d1',
+                        'paper': '#e5e5e1',
+                    },
+                    fontFamily: {
+                        'display': ['"Bungee"', 'cursive'],
+                        'typewriter': ['"Special Elite"', 'serif'],
+                        'mono-clean': ['"Courier Prime"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #121212;
+            background-image: 
+                radial-gradient(#222 1px, transparent 1px),
+                linear-gradient(to right, #1a1a1a 1px, transparent 1px);
+            background-size: 40px 40px, 100% 2px;
+            color: #e5e5e1;
+            overflow-x: hidden;
+        }
+
+        .zine-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .paper-texture {
+            background-color: #e5e5e1;
+            color: #09090b;
+            box-shadow: 10px 10px 0px #ff4d00;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paper-texture::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .distorted-border {
+            border: 3px solid #09090b;
+            clip-path: polygon(0% 2%, 100% 0%, 98% 100%, 1% 97%);
+        }
+
+        .stamp {
+            text-transform: uppercase;
+            font-weight: bold;
+            border: 4px solid currentColor;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            transform: rotate(-12deg);
+            opacity: 0.8;
+        }
+
+        .tape {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(2px);
+            height: 40px;
+            width: 120px;
+            position: absolute;
+            transform: rotate(-5deg);
+        }
+
+        .glitch-text {
+            text-shadow: 2px 0 #ff4d00, -2px 0 #00ffff;
+        }
+
+        .bs-meter {
+            height: 20px;
+            background: #09090b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bs-fill {
+            height: 100%;
+            background: #ff4d00;
+            width: 40%; /* 4/10 */
+        }
+
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.9; }
+        }
+
+        .urgent-tag {
+            animation: flicker 0.2s infinite;
+        }
+
+        .grid-asymmetric {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .grid-asymmetric {
+                grid-template-columns: 40% 60%;
+            }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="zine-container">
+
+        <!-- TOP NAV -->
+        <nav style="border-bottom: 1px solid #2a2a2a; margin-bottom: 2rem; padding-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between;">
+            <a href="../index.html" id="nav-back" style="font-family: 'Courier Prime', monospace; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #888; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.15s;">
+                <span style="color: #ff4d00;">&#8592;</span> All Editions
+            </a>
+            <span style="font-family: 'Bungee', cursive; font-size: 0.7rem; letter-spacing: 0.2em; color: #333; text-transform: uppercase;">The Bullshit Detector</span>
+            <span style="font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.15em; color: #555; text-transform: uppercase;">Issue #011</span>
+        </nav>
+
+        <!-- HEADER -->
+        <header class="mb-12 relative">
+            <div class="urgent-tag bg-industrial-orange text-black font-display text-sm inline-block px-4 py-1 mb-2 transform -skew-x-12">
+                PUBLIC ACCESS / NO FILTER
+            </div>
+            <h1 class="font-display text-5xl md:text-8xl leading-none uppercase glitch-text tracking-tighter">
+                Bullshit<br>Detector<br><span class="text-industrial-orange">Report</span>
+            </h1>
+            <div class="mt-4 flex flex-col md:flex-row gap-4 items-start md:items-center">
+                <div class="font-mono-clean text-xs uppercase tracking-widest border-b border-industrial-orange pb-1">
+                    Issue No. 011 // Energy Fragility Update
+                </div>
+                <div class="font-mono-clean text-xs uppercase tracking-widest bg-white text-black px-2">
+                    Date: 27 MARCH 2026
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="grid-asymmetric items-start">
+            
+            <!-- SECTION 1: THE OFFICIAL LINE -->
+            <section class="paper-texture p-6 md:p-8 distorted-border relative">
+                <div class="tape -top-4 -left-4"></div>
+                
+                <h2 class="font-display text-2xl mb-6 border-b-4 border-black inline-block">THE OFFICIAL LINE</h2>
+                
+                <div class="font-typewriter text-lg leading-relaxed space-y-4">
+                    <p class="italic text-gray-700 mb-4">
+                    <P>
+<div class="mt-8 border-t-2 border-dotted border-black pt-4">
+                        <a href="https://www.beehive.govt.nz/release/fuel-plan-protect-economy-amid-disruption" target="_blank" class="font-mono-clean text-sm font-bold underline hover:text-industrial-orange">
+                            READ THE ORIGINAL MUSH &rarr;
+                        </a>
+                    </div>
+                    <p>
+                        The Government is updating the National Fuel Plan to ensure New Zealand is better prepared for global fuel supply disruptions. 
+                    </p>
+                    <p>
+                        "This is about being proactive and prudent. While there are currently no issues with fuel supply, the volatility in the Middle East means we must have robust plans in place."
+                    </p>
+                    <p>
+                        The plan introduces clearer triggers for government action and emphasizes voluntary fuel conservation in the early stages to avoid the need for mandatory restrictions. 
+                    </p>
+                    <p>
+                        It aims to "protect the economy" and ensure "essential services" remain operational during any potential shortfall.
+                    </p>
+                    
+                 
+                </div>
+
+                <div class="stamp text-zinc-400 absolute bottom-4 right-4 rotate-12 pointer-events-none border-zinc-300">
+                    APPROVED BY BUREAUCRACY
+                </div>
+            </section>
+
+            <!-- SECTION 2: THE UNVARNISHED TRUTH -->
+            <section class="space-y-8">
+                
+                <!-- THE REAL STORY -->
+                <div class="bg-zinc-900 border-l-8 border-industrial-orange p-8 transform rotate-1">
+                    <h2 class="font-display text-3xl text-industrial-orange mb-4 uppercase">The Real Story</h2>
+                    <div class="font-mono-clean text-zinc-300 text-lg leading-relaxed">
+                        The New Zealand government is effectively sounding an early alarm on a potential energy crisis triggered by Middle Eastern instability. While framed as "prudent planning" and "proactive management," the update to the National Fuel Plan reveals that the country's fuel security is highly precarious. By formalizing response phases and intervention triggers now, the government is attempting to manage public expectations and prevent panic buying before mandatory rationing becomes necessary. This is a strategic move to socialize the concept of fuel scarcity so that future prioritization of "essential" services (Phase 3) is accepted as a planned response rather than a sudden emergency failure.
+                    </div>
+                </div>
+
+                <!-- HARD TRUTHS BENTO -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white text-black p-6 flex flex-col justify-between">
+                        <h3 class="font-display text-xl mb-3 underline">EXTREME FRAGILITY</h3>
+                        <p class="font-typewriter text-sm">New Zealand’s fuel stock levels are so sensitive that a sustained three-day fluctuation is enough to trigger a shift in national response phases.</p>
+                    </div>
+                    <div class="bg-industrial-orange text-black p-6 flex flex-col justify-between transform -rotate-2">
+                        <h3 class="font-display text-xl mb-3 underline">ZERO CONTROL</h3>
+                        <p class="font-typewriter text-sm">The nation is entirely dependent on international supply chains and foreign refineries, leaving us with no domestic safety net if global markets shift.</p>
+                    </div>
+                    <div class="bg-zinc-800 text-white p-6 border border-zinc-700 md:col-span-2">
+                        <h3 class="font-display text-xl mb-3 text-industrial-orange">INEVITABLE RATIONING</h3>
+                        <p class="font-mono-clean text-sm">Specifically detailing Phases 3 and 4 suggests the government lacks confidence that voluntary conservation will be sufficient. They are already picking "winners and losers" (Economic Triage) for the fallout.</p>
+                    </div>
+                    <div class="bg-zinc-200 text-black p-6 border-2 border-black border-dashed">
+                        <h3 class="font-display text-lg mb-2">QUALITY COMPROMISE</h3>
+                        <p class="font-mono-clean text-xs">"Easing restrictions" = Burning lower quality fuel. Expect impacted vehicle performance and higher emissions to keep the pumps moving.</p>
+                    </div>
+                    
+                    <!-- BS RATING COMPONENT -->
+                    <div class="bg-black border-4 border-industrial-orange p-6 flex flex-col items-center justify-center text-center">
+                        <div class="font-display text-industrial-orange text-sm mb-2 tracking-widest uppercase">Analysis Result</div>
+                        <div class="font-display text-7xl text-white mb-2">4<span class="text-3xl text-zinc-600">/10</span></div>
+                        <div class="font-display text-industrial-orange text-2xl uppercase mb-4">BS RATING</div>
+                        
+                        <div class="w-full bs-meter mb-4">
+                            <div class="bs-fill"></div>
+                        </div>
+                        
+                        <p class="font-mono-clean text-[10px] text-zinc-500 uppercase leading-tight">
+                            Rating explanation: Moderate political "fluff". Low score indicates high credibility of the threat itself. Blunt warning shot detected.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DETAILED BS RATING TEXT -->
+                <div class="bg-zinc-100 text-black p-6 font-typewriter border-t-4 border-industrial-orange">
+                    <h4 class="font-bold mb-2 uppercase">[ ANALYST NOTES ]</h4>
+                    <p class="text-sm">
+                        The press release contains a moderate amount of political "fluff," particularly the repeated assertions that there is "no need for fuel restrictions" even as it publishes the manual for implementing them. The emphasis on "voluntary reduction" serves as a psychological buffer to shift blame onto the public if shortages occur. However, the rating is relatively low (meaning more credible) because it provides transparent, measurable triggers (like the 3-day stock rule) and clearly outlines the mechanisms for government intervention, making it an unusually blunt "warning shot" disguised as a routine update.
+                    </p>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- DECORATIVE ELEMENTS -->
+        <div class="mt-20 flex justify-between items-center opacity-40 grayscale pointer-events-none">
+            <div class="h-1 w-1/3 bg-zinc-800"></div>
+            <div class="font-display text-xs px-4">END OF REPORT 011</div>
+            <div class="h-1 w-1/3 bg-zinc-800"></div>
+        </div>
+
+        <!-- ISSUE NAVIGATION -->
+        <div style="border-top: 2px solid #2a2a2a; margin-top: 3rem; padding-top: 2rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+
+                <a href="issue-083.html" id="prev-link" style="font-family: 'Bungee', cursive; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; transition: color 0.15s;">
+                    <span style="color: #ff4d00;">&#8592;</span>
+                    <span>
+                        <span style="display: block; font-family: 'Courier Prime', monospace; font-size: 0.65rem; color: #333; margin-bottom: 2px;">Previous</span>
+                        Issue #010
+                    </span>
+                </a>
+
+                <a href="../index.html" style="font-family: 'Bungee', cursive; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; padding: 0.6rem 1.5rem; border: 2px solid #2a2a2a; color: #666; text-decoration: none; transition: all 0.15s;">
+                    ↑ All Editions
+                </a>
+
+                <a href="issue-085.html" id="next-link" style="font-family: 'Bungee', cursive; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: #555; text-decoration: none; display: flex; align-items: center; gap: 0.75rem; transition: color 0.15s; text-align: right;">
+                    <span>
+                        <span style="display: block; font-family: 'Courier Prime', monospace; font-size: 0.65rem; color: #333; margin-bottom: 2px;">Next</span>
+                        Issue #012
+                    </span>
+                    <span style="color: #ff4d00;">&#8594;</span>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer style="border-top: 1px solid #1e1e1e; margin-top: 2rem; padding-top: 1.5rem; margin-bottom: 2rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
+
+            <div style="font-family: 'Courier Prime', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: #333; text-transform: uppercase; line-height: 1.8;">
+                <p>// Rebellion requires literacy</p>
+                <p>// Trust no press release</p>
+                <p>// Verify all data</p>
+            </div>
+
+            <!-- SHARE NUDGE -->
+            <div style="border: 2px solid #2a2a2a; padding: 1rem 1.5rem; text-align: center; box-shadow: 4px 4px 0 #ff4d00;">
+                <p style="font-family: 'Bungee', cursive; color: #ff4d00; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.25rem;">Know someone who needs this?</p>
+                <p style="font-family: 'Special Elite', serif; font-size: 0.75rem; color: #555; margin-bottom: 0.75rem;">Share the link. That's the whole point.</p>
+                <button onclick="navigator.clipboard.writeText(window.location.href).then(() => { this.textContent = '✓ Copied'; setTimeout(() => this.textContent = 'Copy Link', 2000); })"
+                    style="font-family: 'Bungee', cursive; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.5rem 1.25rem; background: #ff4d00; color: #000; border: none; cursor: pointer; transition: background 0.15s;">
+                    Copy Link
+                </button>
+            </div>
+
+            <a href="../index.html" style="font-family: 'Bungee', cursive; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: #333; text-decoration: none; text-align: right; line-height: 1.6; transition: color 0.15s;">
+                The Bullshit<br>Detector
+            </a>
+
+        </footer>
+
+    </div><!-- end .zine-container -->
+
+    <script>
+        // Hover states for nav links
+        document.querySelectorAll('a').forEach(a => {
+            a.addEventListener('mouseenter', () => { if (!a.style.color.includes('ff4d00')) a.style.color = '#e5e5e1'; });
+            a.addEventListener('mouseleave', () => { if (!a.style.color.includes('ff4d00')) a.style.color = ''; });
+        });
+
+        // Subtle interaction: random tilt for elements on load
+        document.querySelectorAll('.paper-texture').forEach(el => {
+            const tilt = (Math.random() * 2 - 1).toFixed(2);
+            el.style.transform = `rotate(${tilt}deg)`;
+        });
+
+        console.log("Bullshit Detector Active. Stay vigilant.");
+    </script>
+</body>
+</html>
